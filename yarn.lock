@@ -6480,6 +6480,16 @@ vary@~1.1.2:
   version "1.1.2"
   resolved "http://registry.npm.taobao.org/vary/download/vary-1.1.2.tgz#2299f02c6ded30d4a5961b0b9f74524a18f634fc"
 
+vconsole-webpack-plugin@^1.4.0:
+  version "1.4.2"
+  resolved "http://registry.npm.taobao.org/vconsole-webpack-plugin/download/vconsole-webpack-plugin-1.4.2.tgz#838346f70dc68c0dbd0c85ef88e625575f2b9a2d"
+  dependencies:
+    vconsole "^3.1.0"
+
+vconsole@^3.1.0:
+  version "3.2.0"
+  resolved "http://registry.npm.taobao.org/vconsole/download/vconsole-3.2.0.tgz#960e2877d685a9543f5f30ec055a66a96ac15bb5"
+
 vendors@^1.0.0:
   version "1.0.2"
   resolved "http://registry.npm.taobao.org/vendors/download/vendors-1.0.2.tgz#7fcb5eef9f5623b156bcea89ec37d63676f21801"
@@ -6497,6 +6507,12 @@ vm-browserify@0.0.4:
   resolved "http://registry.npm.taobao.org/vm-browserify/download/vm-browserify-0.0.4.tgz#5d7ea45bbef9e4a6ff65f95438e0a87c357d5a73"
   dependencies:
     indexof "0.0.1"
+
+vue-cli-plugin-vconsole@^1.0.1:
+  version "1.0.1"
+  resolved "http://registry.npm.taobao.org/vue-cli-plugin-vconsole/download/vue-cli-plugin-vconsole-1.0.1.tgz#7f039a61557f98e2d7aba5f7dcbeab2b26308b71"
+  dependencies:
+    vconsole-webpack-plugin "^1.4.0"
 
 vue-eslint-parser@^2.0.3:
   version "2.0.3"
