@@ -18,6 +18,6 @@ module.exports = {
     // 模板会被推导为 `public/subpage.html`
     // 并且如果找不到的话，就回退到 `public/index.html`。
     // 输出文件名会被推导为 `subpage.html`。
-    test: 'src/views/test/'
+    test: 'src/views/test/index.js'
   }
 }
