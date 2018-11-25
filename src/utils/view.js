@@ -22,6 +22,13 @@ const view = {
     // 拼接 url
     let url = './' + id + '.html'
 
+    if (!style.popGesture || style.popGesture === 'hide') {
+      extras = {
+        hide: true, // 需要隐藏
+        ...extras
+      }
+    }
+
     let ws = plus.webview.create(
       url,
       id,

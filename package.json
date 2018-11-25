@@ -17,7 +17,8 @@
     "postcss-viewport-units": "^0.1.6",
     "postcss-write-svg": "^3.0.1",
     "vue": "^2.5.17",
-    "vuex": "^3.0.1"
+    "vuex": "^3.0.1",
+    "fastclick": "https://github.com/shuliuzhenhua/fastclick"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.0.1",
