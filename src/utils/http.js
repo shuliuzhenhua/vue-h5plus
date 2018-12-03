@@ -29,10 +29,11 @@ instance.interceptors.response.use(
      * 错误弹窗，和返回异常是异步进行的
      * 注释的是用的 vant 的组件
      */
-    // Dialog.alert({
+    // return Dialog.alert({
     //   message: err.response.data.msg
+    // }).then(() => {
+    //   return Promise.reject(err.response.data)
     // })
-    alert(err.response.data.msg)
     return Promise.reject(err.response.data)
   }
 )
