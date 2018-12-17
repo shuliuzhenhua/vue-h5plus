@@ -7,26 +7,26 @@ const view = {
    * @param show
    * @returns {*}
    */
-  open (id, style = {}, extras = {}, show = true) {
+  open(id, style = {}, extras = {}, show = true) {
     // 如果以前创建过就显示或关闭
-    let wv = plus.webview.getWebviewById(id)
+    let wv = plus.webview.getWebviewById(id);
     if (wv) {
       if (show) {
-        view.show(id)
-        return wv
+        view.show(id);
+        return wv;
       } else {
-        view.close(id)
+        view.close(id);
       }
     }
 
     // 拼接 url
-    let url = './' + id + '.html'
+    let url = './' + id + '.html';
 
     if (!style.popGesture || style.popGesture === 'hide') {
       extras = {
         hide: true, // 需要隐藏
-        ...extras
-      }
+        ...extras,
+      };
     }
 
     let ws = plus.webview.create(
@@ -39,53 +39,58 @@ const view = {
         popGesture: 'hide', // 右滑后隐藏
         bounce: 'none',
         bounceBackground: '#efeff4',
-        ...style
+        progress: { color: '#2697f6', height: '3%' },
+        ...style,
       },
       extras
-    )
+    );
 
-    let w = plus.nativeUI.showWaiting()
+    let w = null;
 
     // 监听需要打开的窗口已经载入完毕
+    ws.addEventListener('loading', () => {
+      ws.show('slide-in-right'); // 显示窗口
+      w = plus.nativeUI.showWaiting();
+    });
+
     ws.addEventListener('loaded', () => {
-      ws.show('slide-in-right') // 显示窗口
-      w.close()
-      w = null
-    })
-    return ws
+      w.close();
+    });
+
+    return ws;
   },
   /**
    * 显示窗口
    * @param id
    */
-  show (id) {
-    plus.webview.show(id, 'slide-in-right', 200)
+  show(id) {
+    plus.webview.show(id, 'slide-in-right', 200);
   },
   /**
    * 返回当前 窗口信息
    * @returns {*}
    */
-  current () {
-    return plus.webview.currentWebview()
+  current() {
+    return plus.webview.currentWebview();
   },
   /**
    * 关闭窗口
    * @param id 窗口 的id
    * @param style 关闭样式
    */
-  close (id = null, style = null) {
+  close(id = null, style = null) {
     if (id === null) {
-      let current = view.current()
-      id = current.id
+      let current = view.current();
+      id = current.id;
     }
-    plus.webview.close(id, style)
+    plus.webview.close(id, style);
   },
   /**
    * 隐藏当前窗口
    */
-  hide () {
-    let current = view.current()
-    plus.webview.hide(current.id, 'auto')
+  hide() {
+    let current = view.current();
+    plus.webview.hide(current.id, 'auto');
   },
   /**
    * 跨网页传输数据
@@ -93,21 +98,21 @@ const view = {
    * @param data
    * @param type
    */
-  fire (id, data, type = 'event') {
-    let view = plus.webview.getWebviewById(id)
+  fire(id, data, type = 'event') {
+    let view = plus.webview.getWebviewById(id);
     view &&
-    view.evalJS(`
+      view.evalJS(`
   document.dispatchEvent(new CustomEvent("${type}", {
     detail:${JSON.stringify(data)},
     bubbles: true,
     cancelable: true
-  }));`)
+  }));`);
   },
   /**
    * 取得首页
    */
-  launch () {
-    return plus.webview.getLaunchWebview()
-  }
-}
-export default view
+  launch() {
+    return plus.webview.getLaunchWebview();
+  },
+};
+export default view;
