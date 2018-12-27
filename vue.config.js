@@ -3,6 +3,7 @@ function resolve (dir) {
   return path.join(__dirname, dir)
 }
 module.exports = {
+  baseUrl: './',
   pages: {
     index: {
       // page 的入口
