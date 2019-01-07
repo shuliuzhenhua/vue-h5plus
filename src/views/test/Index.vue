@@ -12,6 +12,10 @@ import { GET_USER_TOKEN } from '../../api'
 export default {
   created () {
     this.getUserToken()
+
+    // 页面传值
+    const { name } = this.$view.current()
+    console.log(name)
   },
   methods: {
     async getUserToken () {

@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "axios": "^0.18.0",
+    "babel-plugin-import": "^1.11.0",
     "cssnano": "^4.1.7",
     "cssnano-preset-advanced": "^4.0.5",
     "fastclick": "https://github.com/shuliuzhenhua/fastclick",
@@ -20,6 +21,7 @@
     "style-resources-loader": "^1.2.1",
     "stylus": "^0.54.5",
     "stylus-loader": "^3.0.2",
+    "vant": "^1.5.1",
     "vue": "^2.5.17",
     "vuex": "^3.0.1"
   },

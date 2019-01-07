@@ -1,11 +1,15 @@
 <template>
   <div id="app">
-    <button @click="toTest">去测试页面</button>
+    <van-nav-bar title="首页"/>
+    <button @click="toTest">页面传值</button>
+    <button @click="toTest">表单</button>
   </div>
 </template>
 
 <script>
-
+import Vue from 'vue'
+import { NavBar } from 'vant'
+Vue.use(NavBar)
 export default {
   name: 'app',
   created () {
@@ -13,7 +17,7 @@ export default {
   },
   methods: {
     toTest () {
-      this.$view.open('test')
+      this.$view.open('test', {}, { name: 'goudan' })
       // this.$view.open('test', {}, {}, false)
     },
     listener () {
