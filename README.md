@@ -29,6 +29,9 @@
 
 ```
 
+## demo
+新增表单示例有两种验证模式
+
 ## Project setup
 ```
 yarn install

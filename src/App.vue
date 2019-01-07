@@ -2,7 +2,7 @@
   <div id="app">
     <van-nav-bar title="首页"/>
     <button @click="toTest">页面传值</button>
-    <button @click="toTest">表单</button>
+    <button @click="$view.open('form')">表单</button>
   </div>
 </template>
 
